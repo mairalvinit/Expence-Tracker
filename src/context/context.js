@@ -2,7 +2,7 @@ import React , {useReducer,createContext} from 'react';
 import contextReducer from './contextReducer';
 
 const initialState = [];
-export const ExpenceTrackerContext  = createContext(initialState);
+export const ExpenseTrackerContext  = createContext(initialState);
 
 export const Provider = ({children}) =>{
     
@@ -19,12 +19,12 @@ export const Provider = ({children}) =>{
 
 
     return (
-        <ExpenceTrackerContext.Provider value={{
+        <ExpenseTrackerContext.Provider value={{
             deleteTransaction,
             addTransaction,
             transactions,
         }}>
             {children}
-        </ExpenceTrackerContext.Provider>
+        </ExpenseTrackerContext.Provider>
     )
 }

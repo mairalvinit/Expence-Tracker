@@ -10,7 +10,7 @@ const contextReducer = (state,action) =>{
             transactions = [action.payload , ...state];
             return transactions; 
         default:
-            return state;
+            return [...state];
     }
 }
 export default contextReducer;
