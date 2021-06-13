@@ -1,16 +1,17 @@
+import dotenv from 'dotenv';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import dotenv from 'dotenv';
 import { SpeechProvider } from '@speechly/react-client';
-
 import {Provider} from './context/context';
 import App from './App';
-import './index.css';
-
+import './index.css'
 dotenv.config();
+const {React_App_SPEECHLY_ID } = process.env;
+// eslint-disable-next-line
+const appId = `${React_App_SPEECHLY_ID}`
 
 ReactDOM.render(
-    <SpeechProvider appId={process.env.APP_ID} language="en-US">
+    <SpeechProvider appId={appId} language="en-US">
     <Provider>
         <App />
     </Provider>
